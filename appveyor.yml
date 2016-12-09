@@ -17,7 +17,7 @@ install:
 # Post-install test scripts.
 test_script:
   # run tests
-  - "npm run coveralls"
+  - "npm run test"
 
 # Don't actually build.
 build: off
