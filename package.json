@@ -1,0 +1,47 @@
+{
+  "author": "gucong",
+  "bugs": {
+    "url": "https://github.com/gucong3000/exec-extra/issues"
+  },
+  "dependencies": {
+    "is-windows": "^1.0.0",
+    "mz": "^2.6.0",
+    "thenify": "^3.2.1",
+    "which": "^1.2.12"
+  },
+  "description": "binary diff using bsdiff and bspatch. binaries included for windows",
+  "devDependencies": {
+    "any-promise": "^1.3.0",
+    "coveralls": "^2.11.15",
+    "diff": "^3.1.0",
+    "fs-extra-async": "^1.0.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "homepage": "https://github.com/gucong3000/exec-extra#readme",
+  "keywords": [
+    "exec",
+    "which",
+    "where",
+    "execFile",
+    "binaries",
+    "binary",
+    "bin"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "exec-extra",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gucong3000/exec-extra.git"
+  },
+  "scripts": {
+    "coveralls": "npm run test-cov && coveralls < coverage/lcov.info",
+    "test": "mocha",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha"
+  },
+  "version": "1.0.0"
+}
