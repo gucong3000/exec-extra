@@ -3,7 +3,7 @@ var execAsync = require('./lib/exec-async');
 var handler = {
 	get: function(target, name) {
 		return function() {
-			return target(name, arguments);
+			return target(name, [].slice.call(arguments, 0));
 		};
 	},
 	apply: function(target, thisBinding, args) {
