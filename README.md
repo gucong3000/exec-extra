@@ -21,7 +21,7 @@ npm install --save exec-extra
 
 ## API
 
-### execa(file, [arguments], [options])
+### execExtra(file, [arguments], [options])
 
 Execute a file.
 
