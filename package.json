@@ -9,7 +9,7 @@
     "thenify": "^3.2.1",
     "which": "^1.2.12"
   },
-  "description": "binary diff using bsdiff and bspatch. binaries included for windows",
+  "description": "A better child_process",
   "devDependencies": {
     "any-promise": "^1.3.0",
     "coveralls": "^2.11.15",

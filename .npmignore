@@ -9,6 +9,7 @@
 .node_repl_history
 .stylelintrc*
 .travis.yml
+.vscode
 appveyor.yml
 coverage
 gulpfile.js
