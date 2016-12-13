@@ -12,6 +12,7 @@ install:
   - where git
   # Get the latest stable version of Node.js or io.js
   - ps: Install-Product node $env:nodejs_version
+  - node -e "console.log(process.env)"
   # install modules
   - npm install
 
