@@ -9,6 +9,7 @@ environment:
 
 # Install scripts. (runs after repo cloning)
 install:
+  - where git
   # Get the latest stable version of Node.js or io.js
   - ps: Install-Product node $env:nodejs_version
   # install modules
