@@ -14,6 +14,7 @@ install:
   - ps: Install-Product node $env:nodejs_version
   - node -e "console.log(process.env)"
   # install modules
+  - REG QUERY HKLM\\SOFTWARE\\GitForWindows InstallPath
   - npm install
 
 # Post-install test scripts.
