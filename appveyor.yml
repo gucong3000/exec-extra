@@ -9,12 +9,9 @@ environment:
 
 # Install scripts. (runs after repo cloning)
 install:
-  - where git
   # Get the latest stable version of Node.js or io.js
   - ps: Install-Product node $env:nodejs_version
-  - node -e "console.log(process.env)"
   # install modules
-  - REG QUERY HKLM\\SOFTWARE\\GitForWindows InstallPath
   - npm install
 
 # Post-install test scripts.
