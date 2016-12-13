@@ -10,6 +10,13 @@
 	"parser": "babel-eslint",
 	"root": true,
 	"rules": {
+		"comma-spacing": [
+			"error",
+			{
+				"after": true,
+				"before": false
+			}
+		],
 		"indent": [
 			"warn",
 			"tab",
