@@ -34,7 +34,7 @@ describe('git path', function() {
 			execFile('zdiff', ['--help']),
 		]).then(function(result) {
 			assert.ok(result[0][0].indexOf('OPTIONs are the same as for') >= 0);
-			assert.deepStrictEqual(result[0], result[1]);
+			assert.deepEqual(result[0], result[1]);
 		});
 	});
 });
