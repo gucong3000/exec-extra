@@ -48,6 +48,9 @@
 			"error",
 			"always"
 		],
+		"space-infix-ops": [
+			"error"
+		],
 		"spaced-comment": [
 			"error",
 			"always"
