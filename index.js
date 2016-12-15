@@ -1,8 +1,9 @@
 var isWindows = require('is-windows');
 
 if(isWindows()) {
-	require('./lib/patch');
-	require('./lib/env-path');
+	require('git-bash-shell');
 }
+
 require('./lib/node-bin-path');
-module.exports = require('child_process');
+
+module.exports = require('./lib/exec-async');

@@ -9,32 +9,25 @@ exec-extra
 A better child_process
 
 ## Why
+- Promise interface.
 - Executes locally installed binaries by name.
 - Improved Windows support.
 	- Support [PATHEXT](https://github.com/joyent/node/issues/2318)
 	- Support [shebangs](http://pt.wikipedia.org/wiki/Shebang)
 	- Support [bash](https://pt.wikipedia.org/wiki/Bash) shell
 
+## Install
+
 ```bash
 npm install --save exec-extra
 ```
 
-### execExtra(file, [arguments], [options])
+## Usage
 
 ```javascript
-require('exec-extra');
-const spawn = require('child_process').spawn;
-const ls = spawn('cat', ['README.md']);
-
-ls.stdout.on('data', (data) => {
-	console.log(`stdout: ${data}`);
-});
-
-ls.stderr.on('data', (data) => {
-	console.log(`stderr: ${data}`);
-});
-
-ls.on('close', (code) => {
-	console.log(`child process exited with code ${code}`);
+const exec = require('exec-extra');
+exec('cat', ['README.md']).then(([stdout, stderr]) => {
+	console.log(stdout);
+	console.error(stderr);
 });
 ```
