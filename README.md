@@ -31,3 +31,29 @@ exec('cat', ['README.md']).then(([stdout, stderr]) => {
 	console.error(stderr);
 });
 ```
+
+Or use `child_process`
+
+```javascript
+require('exec-extra');
+const spawn = require('child_process').spawn;
+const ls = spawn('eslint', ['test/*.js']);
+
+ls.stdout.on('data', (data) => {
+	console.log(`stdout: ${data}`);
+});
+
+ls.stderr.on('data', (data) => {
+	console.log(`stderr: ${data}`);
+});
+
+ls.on('close', (code) => {
+	console.log(`child process exited with code ${code}`);
+});
+```
+
+Or use CLI
+
+```bash
+npm-run mocha
+```

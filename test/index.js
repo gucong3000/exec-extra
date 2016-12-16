@@ -51,7 +51,18 @@ describe('bsdiff', function() {
 	});
 
 	after(function() {
-		fs.unlink('test/generated.file.json');
-		fs.unlink('test/test.patch');
+		fs.unlinkSync('test/generated.file.json');
+		fs.unlinkSync('test/test.patch');
 	});
+});
+
+describe('npm run', function() {
+
+	it('eslint test/*.js', function() {
+		return exec('eslint', ['test/*.js']).then(function(result) {
+			assert.ok(!result[0]);
+			assert.ok(!result[1]);
+		});
+	});
+
 });
