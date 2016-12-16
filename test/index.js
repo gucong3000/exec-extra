@@ -1,5 +1,4 @@
 var describe = require('mocha').describe;
-var after = require('mocha').after;
 var it = require('mocha').it;
 var assert = require('assert');
 
@@ -28,31 +27,6 @@ describe('git path', function() {
 		return exec('zdiff', ['--help']).then(function(result) {
 			assert.ok(result[0].indexOf('OPTIONs are the same as for') >= 0);
 		});
-	});
-});
-
-describe('bsdiff', function() {
-
-	it('bsdiff README.md package.json test/test.patch', function() {
-		return exec('bsdiff', ['README.md', 'package.json', 'test/test.patch']);
-	});
-
-	it('bspatch README.md test/generated.file.json test/test.patch', function() {
-		return exec('bspatch', ['README.md', 'test/generated.file.json', 'test/test.patch']);
-	});
-
-	it('Files should have been equal', function() {
-		return Promise.all([
-			fs.readFile( 'package.json', {encoding:'utf8'} ),
-			fs.readFile( 'test/generated.file.json', {encoding:'utf8'} ),
-		]).then(function(result) {
-			assert.equal(result[0], result[1]);
-		});
-	});
-
-	after(function() {
-		fs.unlinkSync('test/generated.file.json');
-		fs.unlinkSync('test/test.patch');
 	});
 });
 
