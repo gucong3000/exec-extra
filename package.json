@@ -7,7 +7,6 @@
     "url": "https://github.com/gucong3000/exec-extra/issues"
   },
   "dependencies": {
-    "git-bash-shell": "^1.0.5",
     "is-windows": "^1.0.0",
     "thenify": "^3.2.1"
   },
@@ -39,6 +38,9 @@
   "license": "MIT",
   "main": "index.js",
   "name": "exec-extra",
+  "optionalDependencies": {
+    "git-bash-shell": "^1.0.5"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gucong3000/exec-extra.git"
