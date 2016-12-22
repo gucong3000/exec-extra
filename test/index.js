@@ -17,7 +17,7 @@ describe('git path', function() {
 	});
 	it('cat README.md', function() {
 		return Promise.all([
-			exec('cat', ['README.md']),
+			exec.cat(['README.md']),
 			fs.readFile('README.md', {encoding:'utf8'}),
 		]).then(function(result) {
 			assert.equal(result[0][0], result[1]);

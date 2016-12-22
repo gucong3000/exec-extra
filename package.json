@@ -1,7 +1,7 @@
 {
   "author": "gucong",
   "bin": {
-    "npm-run": "bin/npm-run.js"
+    "npm-run": "./lib/npm-run"
   },
   "bugs": {
     "url": "https://github.com/gucong3000/exec-extra/issues"
@@ -27,21 +27,28 @@
   },
   "homepage": "https://github.com/gucong3000/exec-extra#readme",
   "keywords": [
-    "shebang",
-    "cross",
-    "exec",
-    "which",
-    "where",
-    "execFile",
+    "bin",
     "binaries",
     "binary",
-    "bin"
+    "cross",
+    "exec",
+    "execFile",
+    "npm-run",
+    "platform",
+    "runas",
+    "sh",
+    "shebang",
+    "spawn",
+    "sudo",
+    "where",
+    "which"
   ],
   "license": "MIT",
   "main": "index.js",
   "name": "exec-extra",
   "optionalDependencies": {
-    "git-bash-shell": "^1.2.0"
+    "git-bash-shell": "^1.2.0",
+    "runas": "^3.1.1"
   },
   "repository": {
     "type": "git",
@@ -49,9 +56,9 @@
   },
   "scripts": {
     "coveralls": "npm run test-cov && coveralls < coverage/lcov.info",
-    "lint": "node-version-gte-4 && eslint lib/*.js || echo \"ESLint not supported\"",
+    "lint": "node-version-gte-4 && eslint lib || echo \"ESLint not supported\"",
     "test": "npm run lint && mocha",
     "test-cov": "istanbul cover node_modules/mocha/bin/_mocha"
   },
-  "version": "2.2.0"
+  "version": "2.2.2"
 }
