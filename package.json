@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "is-windows": "^1.0.0",
+    "os-homedir": "^1.0.2",
     "thenify": "^3.2.1"
   },
   "description": "A better child_process",
@@ -40,7 +41,7 @@
   "main": "index.js",
   "name": "exec-extra",
   "optionalDependencies": {
-    "git-bash-shell": "^1.0.6"
+    "git-bash-shell": "^1.2.0"
   },
   "repository": {
     "type": "git",
@@ -52,5 +53,5 @@
     "test": "npm run lint && mocha",
     "test-cov": "istanbul cover node_modules/mocha/bin/_mocha"
   },
-  "version": "2.1.0"
+  "version": "2.2.0"
 }

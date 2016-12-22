@@ -32,10 +32,9 @@ describe('git path', function() {
 
 describe('npm run', function() {
 
-	it('eslint test/*.js', function() {
-		return exec('eslint', ['test/*.js']).then(function(result) {
-			assert.ok(!result[0]);
-			assert.ok(!result[1]);
+	it('eslint --help', function() {
+		return exec('eslint', ['--help']).then(function(result) {
+			assert.ok(result[0].indexOf('Basic configuration:') >= 0);
 		});
 	});
 
