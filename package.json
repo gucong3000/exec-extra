@@ -60,5 +60,5 @@
     "test": "npm run lint && mocha",
     "test-cov": "istanbul cover node_modules/mocha/bin/_mocha"
   },
-  "version": "2.2.3"
+  "version": "2.2.4"
 }
