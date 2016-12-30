@@ -47,7 +47,7 @@
   "main": "index.js",
   "name": "exec-extra",
   "optionalDependencies": {
-    "git-bash-shell": "^1.2.0",
+    "git-bash-shell": "^1.2.2",
     "runas": "^3.1.1"
   },
   "repository": {
