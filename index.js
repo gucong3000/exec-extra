@@ -9,4 +9,4 @@ if (isWindows()) {
 
 require('./lib/node-bin-path');
 
-module.exports = require('./lib/exec-async');
+module.exports = require('./lib/spawn-async');
