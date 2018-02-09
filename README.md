@@ -4,17 +4,19 @@ exec-extra
 [![NPM version](https://img.shields.io/npm/v/exec-extra.svg?style=flat-square)](https://www.npmjs.com/package/exec-extra)
 [![Travis](https://img.shields.io/travis/gucong3000/exec-extra.svg?&label=Linux)](https://travis-ci.org/gucong3000/exec-extra)
 [![AppVeyor](https://img.shields.io/appveyor/ci/gucong3000/exec-extra.svg?&label=Windows)](https://ci.appveyor.com/project/gucong3000/exec-extra)
-[![Coverage Status](https://img.shields.io/coveralls/gucong3000/exec-extra.svg)](https://coveralls.io/r/gucong3000/exec-extra)
+[![Codecov](https://img.shields.io/codecov/c/github/gucong3000/exec-extra.svg)](https://codecov.io/gh/gucong3000/exec-extra)
 
 A better child_process
 
 ## Why
 - Promise interface.
 - Executes locally installed binaries by name.
-- Support [bash](https://pt.wikipedia.org/wiki/Bash) shell cross platform
+- Support [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) shell script cross platform
+- Support [POSIX](https://en.wikipedia.org/wiki/POSIX) file path.
 - Improved Windows support.
+	- Support [Shebang](https://en.wikipedia.org/wiki/Shebang_(Unix))
 	- Support [PATHEXT](https://github.com/joyent/node/issues/2318)
-	- Support [shebangs](http://pt.wikipedia.org/wiki/Shebang)
+	- Support [Shell script](https://en.wikipedia.org/wiki/Shell_script)
 
 ## Install
 
@@ -26,10 +28,15 @@ npm install --save exec-extra
 
 ```javascript
 const exec = require('exec-extra');
-exec('cat', ['README.md']).then(([stdout, stderr]) => {
-	console.log(stdout);
-	console.error(stderr);
-});
+exec('cat', ['README.md']).then((stdout) => {
+	console.info('Success!')
+	console.info('stdout:', stdout.toString())
+})
+.catch((error) => {
+	console.error('Failed!')
+	console.error('exit status:', error.exitStatus)
+	console.error('stderr:', error.stderr.toString())
+})
 ```
 
 Or use `child_process`
