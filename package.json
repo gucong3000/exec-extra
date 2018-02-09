@@ -7,20 +7,25 @@
     "url": "https://github.com/gucong3000/exec-extra/issues"
   },
   "dependencies": {
-    "is-windows": "^1.0.0",
+    "is-windows": "^1.0.1",
     "os-homedir": "^1.0.2",
-    "thenify": "^3.2.1"
+    "thenify": "^3.3.0"
   },
   "description": "A better child_process",
   "devDependencies": {
     "any-promise": "^1.3.0",
+    "codecov": "^3.0.0",
     "cover": "^0.2.9",
     "coveralls": "^3.0.0",
-    "eslint": "^4.6.1",
-    "istanbul": "^0.4.5",
+    "eslint": "^4.17.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^6.0.0",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
     "mocha": "^5.0.0",
-    "mz": "^2.6.0",
-    "node-version-check": "^2.1.1"
+    "mz": "^2.7.0",
+    "nyc": "^11.4.1"
   },
   "directories": {
     "test": "test"
@@ -39,26 +44,30 @@
     "sh",
     "shebang",
     "spawn",
-    "sudo",
     "where",
     "which"
   ],
   "license": "MIT",
   "main": "index.js",
   "name": "exec-extra",
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "cache": true
+  },
   "optionalDependencies": {
-    "git-bash-shell": "^1.2.2",
-    "runas": "^3.1.1"
+    "git-bash-shell": "^1.4.0"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gucong3000/exec-extra.git"
   },
   "scripts": {
-    "coveralls": "npm run test-cov && coveralls < coverage/lcov.info",
-    "lint": "node-version-gte-4 && eslint lib || echo \"ESLint not supported\"",
-    "test": "npm run lint && mocha",
-    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha"
+    "report-coverage": "codecov",
+    "pretest": "eslint lib test *.js",
+    "test": "nyc mocha"
   },
-  "version": "2.2.4"
+  "version": "2.3.0"
 }

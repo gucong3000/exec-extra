@@ -1,7 +1,8 @@
+'use strict';
 var isWindows = require('is-windows');
 
-if(isWindows()) {
-	require('git-bash-shell');
+if (isWindows()) {
+	require('git-bash-shell')();
 } else {
 	require('./lib/patch');
 }
