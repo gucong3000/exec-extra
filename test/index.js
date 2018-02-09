@@ -1,18 +1,19 @@
 'use strict';
 var describe = require('mocha').describe;
 var it = require('mocha').it;
-var assert = require('assert');
+var expect = require('expect.js');
 
 var fs = require('mz/fs');
+var util = require('util');
 var exec = require('../');
 var Promise = require('any-promise');
 
 describe('git path', function () {
 	it('ls', function () {
-		return exec('ls').then(function (result) {
-			result = result[0].split(/\r?\n/).filter(Boolean).sort();
-			assert.ok(result.indexOf('package.json') >= 0);
-			assert.ok(result.indexOf('README.md') >= 0);
+		return exec('ls').then(function (stdout) {
+			stdout = stdout.toString().split(/\r?\n/).filter(Boolean).sort();
+			expect(stdout).to.contain('package.json');
+			expect(stdout).to.contain('README.md');
 		});
 	});
 	it('cat README.md', function () {
@@ -20,20 +21,35 @@ describe('git path', function () {
 			exec.cat(['README.md']),
 			fs.readFile('README.md', {encoding: 'utf8'}),
 		]).then(function (result) {
-			assert.equal(result[0][0], result[1]);
+			expect(result[0].toString()).to.equal(result[1]);
 		});
 	});
 	it('zdiff --help', function () {
-		return exec('zdiff', ['--help']).then(function (result) {
-			assert.ok(result[0].indexOf('OPTIONs are the same as for') >= 0);
+		return exec('zdiff', ['--help']).then(function (stdout) {
+			expect(stdout.toString()).to.contain('OPTIONs are the same as for');
 		});
+	});
+	it('~/not-exist', function (done) {
+		exec('~/not-exist', ['--help']).catch(function (stdout) {
+			done();
+		});
+	});
+	it('~/not-exist without $HOME', function (done) {
+		exec('~/not-exist', ['--help'], {
+			env: {},
+		}).catch(function (stdout) {
+			done();
+		});
+	});
+	it('util.inspect', function () {
+		expect(util.inspect(exec)).to.contain('{ [Function: createPromise]');
 	});
 });
 
 describe('npm run', function () {
 	it('eslint --help', function () {
-		return exec('eslint', ['--help']).then(function (result) {
-			assert.ok(result[0].indexOf('Basic configuration:') >= 0);
+		return exec('eslint', ['--help']).then(function (stdout) {
+			expect(stdout.toString()).to.contain('Basic configuration:');
 		});
 	});
 });

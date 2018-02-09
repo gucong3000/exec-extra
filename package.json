@@ -8,8 +8,7 @@
   },
   "dependencies": {
     "is-windows": "^1.0.1",
-    "os-homedir": "^1.0.2",
-    "thenify": "^3.3.0"
+    "spawn-promise": "^0.1.7"
   },
   "description": "A better child_process",
   "devDependencies": {
@@ -23,6 +22,7 @@
     "eslint-plugin-node": "^6.0.0",
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
+    "expect.js": "^0.3.1",
     "mocha": "^5.0.0",
     "mz": "^2.7.0",
     "nyc": "^11.4.1"
@@ -67,7 +67,7 @@
   "scripts": {
     "report-coverage": "codecov",
     "pretest": "eslint lib test *.js",
-    "test": "nyc mocha"
+    "test": "nyc mocha --no-timeouts"
   },
   "version": "2.3.0"
 }
