@@ -1,14 +1,14 @@
 {
   "author": "gucong",
   "bin": {
-    "npm-run": "./lib/npm-run"
+    "npm-run": "./lib/npm-run.js"
   },
   "bugs": {
     "url": "https://github.com/gucong3000/exec-extra/issues"
   },
   "dependencies": {
     "is-windows": "^1.0.2",
-    "spawn-promise": "^0.1.7"
+    "spawn-promise": "^0.1.8"
   },
   "description": "A better child_process",
   "devDependencies": {
@@ -16,14 +16,14 @@
     "codecov": "^3.0.0",
     "cover": "^0.2.9",
     "coveralls": "^3.0.0",
-    "eslint": "^4.18.1",
+    "eslint": "^4.18.2",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-node": "^6.0.1",
-    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-promise": "^3.7.0",
     "eslint-plugin-standard": "^3.0.1",
     "expect.js": "^0.3.1",
-    "mocha": "^5.0.1",
+    "mocha": "^5.0.4",
     "mz": "^2.7.0",
     "nyc": "^11.4.1"
   },
@@ -58,7 +58,7 @@
     "cache": true
   },
   "optionalDependencies": {
-    "git-bash-shell": "^1.5.0"
+    "git-bash-shell": "^1.6.0"
   },
   "repository": {
     "type": "git",
@@ -69,5 +69,5 @@
     "pretest": "eslint lib test *.js",
     "test": "nyc mocha --no-timeouts"
   },
-  "version": "2.3.1"
+  "version": "2.3.2"
 }
