@@ -1,6 +1,0 @@
-#!/usr/bin/env node
-require('../');
-var child_process = require('child_process');
-child_process.spawn('npm', ['run'].concat(process.argv.slice(2)), {
-	stdio: 'inherit',
-});
