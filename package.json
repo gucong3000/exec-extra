@@ -68,5 +68,5 @@
     "pretest": "eslint lib test *.js",
     "test": "nyc mocha --no-timeouts"
   },
-  "version": "2.3.3"
+  "version": "2.4.0"
 }
