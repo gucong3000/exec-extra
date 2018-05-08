@@ -15,7 +15,6 @@
     "any-promise": "^1.3.0",
     "codecov": "^3.0.0",
     "cover": "^0.2.9",
-    "coveralls": "^3.0.0",
     "eslint": "^4.18.2",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.9.0",
