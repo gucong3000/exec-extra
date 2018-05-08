@@ -1,55 +1,55 @@
-'use strict';
-var describe = require('mocha').describe;
-var it = require('mocha').it;
-var expect = require('expect.js');
+"use strict";
+const describe = require("mocha").describe;
+const it = require("mocha").it;
+const expect = require("expect.js");
 
-var fs = require('mz/fs');
-var util = require('util');
-var exec = require('../');
-var Promise = require('any-promise');
+const fs = require("mz/fs");
+const util = require("util");
+const exec = require("../");
+const Promise = require("any-promise");
 
-describe('git path', function () {
-	it('ls', function () {
-		return exec('ls').then(function (stdout) {
+describe("git path", () => {
+	it("ls", () => {
+		return exec("ls").then((stdout) => {
 			stdout = stdout.toString().split(/\r?\n/).filter(Boolean).sort();
-			expect(stdout).to.contain('package.json');
-			expect(stdout).to.contain('README.md');
+			expect(stdout).to.contain("package.json");
+			expect(stdout).to.contain("README.md");
 		});
 	});
-	it('cat README.md', function () {
+	it("cat README.md", () => {
 		return Promise.all([
-			exec.cat(['README.md']),
-			fs.readFile('README.md', {encoding: 'utf8'}),
-		]).then(function (result) {
+			exec.cat(["README.md"]),
+			fs.readFile("README.md", {encoding: "utf8"}),
+		]).then((result) => {
 			expect(result[0].toString()).to.equal(result[1]);
 		});
 	});
-	it('zdiff --help', function () {
-		return exec('zdiff', ['--help']).then(function (stdout) {
-			expect(stdout.toString()).to.contain('OPTIONs are the same as for');
+	it("zdiff --help", () => {
+		return exec("zdiff", ["--help"]).then((stdout) => {
+			expect(stdout.toString()).to.contain("OPTIONs are the same as for");
 		});
 	});
-	it('~/not-exist', function (done) {
-		exec('~/not-exist', ['--help']).catch(function (stdout) {
+	it("~/not-exist", (done) => {
+		exec("~/not-exist", ["--help"]).catch((stdout) => {
 			done();
 		});
 	});
-	it('~/not-exist without $HOME', function (done) {
-		exec('~/not-exist', ['--help'], {
+	it("~/not-exist without $HOME", (done) => {
+		exec("~/not-exist", ["--help"], {
 			env: {},
-		}).catch(function (stdout) {
+		}).catch((stdout) => {
 			done();
 		});
 	});
-	it('util.inspect', function () {
-		expect(util.inspect(exec)).to.contain('{ [Function: createPromise]');
+	it("util.inspect", () => {
+		expect(util.inspect(exec)).to.contain("{ [Function: createPromise]");
 	});
 });
 
-describe('npm run', function () {
-	it('eslint --help', function () {
-		return exec('eslint', ['--help']).then(function (stdout) {
-			expect(stdout.toString()).to.contain('Basic configuration:');
+describe("npm run", () => {
+	it("eslint --help", () => {
+		return exec("eslint", ["--help"]).then((stdout) => {
+			expect(stdout.toString()).to.contain("Basic configuration:");
 		});
 	});
 });

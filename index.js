@@ -1,12 +1,12 @@
-'use strict';
-var isWindows = require('is-windows');
+"use strict";
+const isWindows = require("is-windows");
 
 if (isWindows()) {
-	require('git-bash-shell')();
+	require("git-bash-shell")();
 } else {
-	require('./lib/patch');
+	require("./lib/patch");
 }
 
-require('./lib/node-bin-path');
+require("./lib/node-bin-path");
 
-module.exports = require('./lib/spawn-async');
+module.exports = require("./lib/spawn-async");
