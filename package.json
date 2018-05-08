@@ -57,7 +57,7 @@
     "cache": true
   },
   "optionalDependencies": {
-    "git-bash-shell": "^1.6.0"
+    "git-bash-shell": "^1.7.0"
   },
   "repository": {
     "type": "git",
