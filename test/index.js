@@ -19,7 +19,7 @@ describe("git path", () => {
 	it("cat README.md", () => {
 		return Promise.all([
 			exec.cat(["README.md"]),
-			fs.readFile("README.md", {encoding: "utf8"}),
+			fs.readFile("README.md", { encoding: "utf8" }),
 		]).then((result) => {
 			expect(result[0].toString()).to.equal(result[1]);
 		});
