@@ -13,18 +13,18 @@
   "description": "A better child_process",
   "devDependencies": {
     "any-promise": "^1.3.0",
-    "codecov": "^3.0.1",
+    "codecov": "^3.0.4",
     "cover": "^0.2.9",
-    "eslint": "^5.0.0",
+    "eslint": "^5.4.0",
     "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^4.0.0",
     "eslint-plugin-standard": "^4.0.0",
     "expect.js": "^0.3.1",
-    "mocha": "^5.1.1",
+    "mocha": "^5.2.0",
     "mz": "^2.7.0",
-    "nyc": "^12.0.2"
+    "nyc": "^13.0.1"
   },
   "directories": {
     "test": "test"
@@ -57,7 +57,7 @@
     "cache": true
   },
   "optionalDependencies": {
-    "git-bash-shell": "^1.7.1"
+    "git-bash-shell": "^1.8.0"
   },
   "repository": {
     "type": "git",
@@ -68,5 +68,5 @@
     "pretest": "eslint lib test *.js",
     "test": "nyc mocha --no-timeouts"
   },
-  "version": "2.4.0"
+  "version": "2.4.1"
 }
