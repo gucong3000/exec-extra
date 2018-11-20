@@ -1,8 +1,5 @@
 {
   "author": "gucong",
-  "bin": {
-    "npm-run": "./lib/npm-run.js"
-  },
   "bugs": {
     "url": "https://github.com/gucong3000/exec-extra/issues"
   },
