@@ -15,9 +15,9 @@ A better child_process
 - Support [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) shell script cross platform
 - Support [POSIX](https://en.wikipedia.org/wiki/POSIX) file path.
 - Improved Windows support.
-	- Support [Shebang](https://en.wikipedia.org/wiki/Shebang_(Unix))
-	- Support [PATHEXT](https://github.com/joyent/node/issues/2318)
-	- Support [Shell script](https://en.wikipedia.org/wiki/Shell_script)
+  - Support [Shebang](https://en.wikipedia.org/wiki/Shebang_(Unix))
+  - Support [PATHEXT](https://github.com/joyent/node/issues/2318)
+  - Support [Shell script](https://en.wikipedia.org/wiki/Shell_script)
 
 ## Install
 
@@ -30,13 +30,13 @@ npm install --save exec-extra
 ```javascript
 const exec = require('exec-extra');
 exec('cat', ['README.md']).then((stdout) => {
-	console.info('Success!')
-	console.info('stdout:', stdout.toString())
+  console.info('Success!')
+  console.info('stdout:', stdout.toString())
 })
 .catch((error) => {
-	console.error('Failed!')
-	console.error('exit status:', error.exitStatus)
-	console.error('stderr:', error.stderr.toString())
+  console.error('Failed!')
+  console.error('exit status:', error.exitStatus)
+  console.error('stderr:', error.stderr.toString())
 })
 ```
 
@@ -48,15 +48,15 @@ const spawn = require('child_process').spawn;
 const ls = spawn('eslint', ['test/*.js']);
 
 ls.stdout.on('data', (data) => {
-	console.log(`stdout: ${data}`);
+  console.log(`stdout: ${data}`);
 });
 
 ls.stderr.on('data', (data) => {
-	console.log(`stderr: ${data}`);
+  console.log(`stderr: ${data}`);
 });
 
 ls.on('close', (code) => {
-	console.log(`child process exited with code ${code}`);
+  console.log(`child process exited with code ${code}`);
 });
 ```
 
