@@ -2,13 +2,11 @@
 const describe = require("mocha").describe;
 const it = require("mocha").it;
 const expect = require("expect.js");
-
-const fs = require("mz/fs");
+const fs = require("fs-extra");
 const util = require("util");
 const exec = require("../");
-const Promise = require("any-promise");
 
-describe("git path", () => {
+describe("posix path", () => {
 	it("ls", () => {
 		return exec("ls").then((stdout) => {
 			stdout = stdout.toString().split(/\r?\n/).filter(Boolean).sort();
@@ -47,6 +45,19 @@ describe("git path", () => {
 });
 
 describe("npm run", () => {
+	let PATH;
+	before(() => {
+		PATH = process.env.PATH;
+	});
+	afterEach(() => {
+		process.env.PATH = PATH;
+	});
+	it("`node_modules/.bin` path", () => {
+		process.env.PATH = "";
+		delete require.cache[require.resolve("../lib/npm-bin-path")];
+		require("../lib/npm-bin-path");
+		expect(process.env.PATH).to.match(/node_modules[/\\]\.bin/);
+	});
 	it("eslint --help", () => {
 		return exec("eslint", ["--help"]).then((stdout) => {
 			expect(stdout.toString()).to.contain("Basic configuration:");
