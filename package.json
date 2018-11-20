@@ -4,7 +4,6 @@
     "url": "https://github.com/gucong3000/exec-extra/issues"
   },
   "dependencies": {
-    "is-windows": "^1.0.2",
     "spawn-promise": "^0.1.8"
   },
   "description": "A better child_process",
