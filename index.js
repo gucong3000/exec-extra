@@ -6,6 +6,6 @@ if (process.platform === "win32") {
 	require("./lib/patch");
 }
 
-require("./lib/node-bin-path");
+require("./lib/npm-bin-path");
 
 module.exports = require("./lib/spawn-async");
