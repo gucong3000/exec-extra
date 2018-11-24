@@ -7,17 +7,13 @@ exec-extra
 [![Codecov](https://img.shields.io/codecov/c/github/gucong3000/exec-extra.svg)](https://codecov.io/gh/gucong3000/exec-extra)
 [![David](https://img.shields.io/david/gucong3000/exec-extra.svg)](https://david-dm.org/gucong3000/exec-extra)
 
-A better child_process
+child_process with [POSIX](https://en.wikipedia.org/wiki/POSIX) style features.
 
 ## Why
-- Promise interface.
-- Executes locally installed binaries by name.
-- Support [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) shell script cross platform
-- Support [POSIX](https://en.wikipedia.org/wiki/POSIX) file path.
-- Improved Windows support.
-  - Support [Shebang](https://en.wikipedia.org/wiki/Shebang_(Unix))
-  - Support [PATHEXT](https://github.com/joyent/node/issues/2318)
-  - Support [Shell script](https://en.wikipedia.org/wiki/Shell_script)
+- Add cross-platform [POSIX](https://en.wikipedia.org/wiki/POSIX) style path support for Node and NPM.
+- Add cross-platform [Shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) support for executable file.
+- Add cross-platform [Shell script](https://en.wikipedia.org/wiki/Shell_script) support for child process.
+- With promise/async interface.
 
 ## Install
 
@@ -64,7 +60,6 @@ Or use CLI
 
 ```bash
 npm i -g exec-extra
-npm-run mocha
 ```
 
 ## Methods
