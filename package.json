@@ -6,7 +6,7 @@
   "dependencies": {
     "spawn-promise": "^0.1.8"
   },
-  "description": "A better child_process",
+  "description": "child_process with POSIX style features",
   "devDependencies": {
     "codecov": "^3.1.0",
     "eclint": "^2.8.1",
@@ -52,7 +52,7 @@
     "cache": true
   },
   "optionalDependencies": {
-    "git-bash-shell": "^2.0.0"
+    "git-bash-shell": "^2.1.0"
   },
   "repository": {
     "type": "git",
@@ -65,5 +65,5 @@
     "pretest": "npm run lint:eclint && npm run lint:eslint",
     "test": "nyc mocha --no-timeouts"
   },
-  "version": "2.5.0"
+  "version": "2.6.0"
 }
