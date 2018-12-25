@@ -2,8 +2,8 @@ exec-extra
 ===========
 
 [![NPM version](https://img.shields.io/npm/v/exec-extra.svg?style=flat-square)](https://www.npmjs.com/package/exec-extra)
-[![Travis](https://img.shields.io/travis/gucong3000/exec-extra.svg?&label=Linux)](https://travis-ci.org/gucong3000/exec-extra)
-[![AppVeyor](https://img.shields.io/appveyor/ci/gucong3000/exec-extra.svg?&label=Windows)](https://ci.appveyor.com/project/gucong3000/exec-extra)
+[![Travis](https://img.shields.io/travis/gucong3000/exec-extra.svg?label=Linux)](https://travis-ci.org/gucong3000/exec-extra)
+[![AppVeyor](https://img.shields.io/appveyor/ci/gucong3000/exec-extra.svg?label=Windows)](https://ci.appveyor.com/project/gucong3000/exec-extra)
 [![Codecov](https://img.shields.io/codecov/c/github/gucong3000/exec-extra.svg)](https://codecov.io/gh/gucong3000/exec-extra)
 [![David](https://img.shields.io/david/gucong3000/exec-extra.svg)](https://david-dm.org/gucong3000/exec-extra)
 
