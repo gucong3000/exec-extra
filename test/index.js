@@ -1,7 +1,5 @@
 "use strict";
-const describe = require("mocha").describe;
-const it = require("mocha").it;
-const expect = require("expect.js");
+const expect = require("chai").expect;
 const fs = require("fs-extra");
 const util = require("util");
 const exec = require("../");

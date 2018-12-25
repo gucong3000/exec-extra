@@ -1,30 +1,15 @@
 {
+  "name": "exec-extra",
   "author": "gucong",
+  "homepage": "https://github.com/gucong3000/exec-extra#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gucong3000/exec-extra.git"
+  },
   "bugs": {
     "url": "https://github.com/gucong3000/exec-extra/issues"
   },
-  "dependencies": {
-    "spawn-promise": "^0.1.8"
-  },
   "description": "child_process with POSIX style features",
-  "devDependencies": {
-    "codecov": "^3.1.0",
-    "eclint": "^2.8.1",
-    "eslint": "^5.9.0",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-node": "^8.0.0",
-    "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-standard": "^4.0.0",
-    "expect.js": "^0.3.1",
-    "fs-extra": "^7.0.1",
-    "mocha": "^5.2.0",
-    "nyc": "^13.1.0"
-  },
-  "directories": {
-    "test": "test"
-  },
-  "homepage": "https://github.com/gucong3000/exec-extra#readme",
   "keywords": [
     "bin",
     "binaries",
@@ -42,21 +27,36 @@
     "which"
   ],
   "license": "MIT",
+  "dependencies": {
+    "spawn-promise": "^0.1.8"
+  },
+  "optionalDependencies": {
+    "git-bash-shell": "^2.4.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "codecov": "^3.1.0",
+    "eclint": "^2.8.1",
+    "eslint": "^5.11.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "fs-extra": "^7.0.1",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0"
+  },
+  "directories": {
+    "test": "test"
+  },
   "main": "index.js",
-  "name": "exec-extra",
   "nyc": {
     "reporter": [
       "lcov",
       "text-summary"
     ],
     "cache": true
-  },
-  "optionalDependencies": {
-    "git-bash-shell": "^2.1.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gucong3000/exec-extra.git"
   },
   "scripts": {
     "report-coverage": "codecov",
