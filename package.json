@@ -1,5 +1,6 @@
 {
   "name": "exec-extra",
+  "version": "2.7.0",
   "author": "gucong",
   "homepage": "https://github.com/gucong3000/exec-extra#readme",
   "repository": {
@@ -64,6 +65,5 @@
     "lint:eslint": "eslint $(grep \"\\.js$\" /tmp/git-files)",
     "pretest": "npm run lint:eclint && npm run lint:eslint",
     "test": "nyc mocha --no-timeouts"
-  },
-  "version": "2.6.0"
+  }
 }
