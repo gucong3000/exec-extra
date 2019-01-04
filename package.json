@@ -1,6 +1,6 @@
 {
   "name": "exec-extra",
-  "version": "2.7.0",
+  "version": "2.8.0",
   "author": "gucong",
   "homepage": "https://github.com/gucong3000/exec-extra#readme",
   "repository": {
@@ -32,13 +32,13 @@
     "spawn-promise": "^0.1.8"
   },
   "optionalDependencies": {
-    "git-bash-shell": "^2.4.0"
+    "git-bash-shell": "^2.5.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
     "codecov": "^3.1.0",
     "eclint": "^2.8.1",
-    "eslint": "^5.11.0",
+    "eslint": "^5.11.1",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-node": "^8.0.0",
